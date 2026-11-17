@@ -109,7 +109,7 @@ glyphs.forEach(([letter,shape])=>{
 });
 
 const letters='ABEFGHIKLMNOPRSTUVXYZ';
-const cipher='✧ϟ✦♢⌁ϟ⋆⌖☾✣⟡⊙⌑◈⌇✦⟐⋔✧⌖⟁';
+const cipher='✧ϟ✦♢⌁⌇⋆⌖☾✣⟡⊙⌑◈⟐⋔⌂⟠⟢⟣⟤';
 const symbolMap=Object.fromEntries([...letters].map((letter,i)=>[letter,[...cipher][i]]));
 const reverseMap=Object.fromEntries(Object.entries(symbolMap).map(([letter,symbol])=>[symbol,letter]));
 const translit={'Á':'A','À':'A','Â':'A','Ã':'A','É':'E','Ê':'E','Í':'I','Ó':'O','Ô':'O','Õ':'O','Ú':'U','Û':'U','Ç':'S'};
