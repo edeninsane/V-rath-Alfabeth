@@ -22,16 +22,16 @@ h1{font:600 clamp(30px,5vw,48px)/1 'IM Fell English',serif;letter-spacing:.14em;
 .intro{max-width:650px;margin:0 auto 32px;text-align:center;font-size:17px;color:#514532;font-style:italic}
 .alphabet{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:20px 12px;max-width:900px;margin:0 auto}
 .glyph{min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
-.glyph svg{width:54px;height:54px;overflow:visible;color:#17130f;filter:drop-shadow(.35px .5px 0 #17130f)}
+.glyph svg{width:54px;height:54px;overflow:visible;color:#17130f;filter:drop-shadow(.35px .5px 0 #17130f)}\n.glyph img{width:100px;height:100px;object-fit:contain;display:block;mix-blend-mode:multiply}\n.element-symbols{grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px;gap:28px}\n.element-symbols .glyph{min-height:150px}\n.element-symbols .glyph img{width:128px;height:128px}
 .glyph .latin{font:600 11px 'Cormorant Garamond',serif;letter-spacing:.18em;color:#5c4d37}
 .section-rule{display:flex;align-items:center;gap:14px;max-width:680px;margin:34px auto 22px;color:#5c4c34}
 .section-rule:before,.section-rule:after{content:"";height:1px;background:#806d4b;flex:1}
 .arca{text-align:center;margin:0 auto;max-width:480px}
-.arca svg{width:108px;height:108px;color:#17130f;filter:drop-shadow(.5px .5px 0 #17130f)}
+.arca svg{width:108px;height:108px;color:#17130f;filter:drop-shadow(.5px .5px 0 #17130f)}\n.arca img{width:min(300px,75vw);height:auto;display:block;margin:0 auto;object-fit:contain;mix-blend-mode:multiply}
 .arca-title{font:600 13px 'IM Fell English',serif;letter-spacing:.22em;text-transform:uppercase;margin-top:5px}
 .arca-caption{font-size:14px;font-style:italic;color:#66583f;margin-top:3px}
 footer{text-align:center;margin-top:34px;font:12px 'IM Fell English',serif;letter-spacing:.17em;color:#6e5d40}
-@media(max-width:680px){.alphabet{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px 7px}.glyph svg{width:48px;height:48px}.sheet{margin:16px auto;width:calc(100% - 20px);padding:30px 18px}.sheet:before{inset:7px}}
+@media(max-width:680px){.alphabet{grid-template-columns:repeat(5,minmax(0,1fr));gap:16px 7px}.glyph svg{width:48px;height:48px}.element-symbols{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.element-symbols .glyph img{width:min(28vw,110px);height:min(28vw,110px)}.element-symbols .latin{font-size:9px;letter-spacing:.04em}.sheet{margin:16px auto;width:calc(100% - 20px);padding:30px 18px}.sheet:before{inset:7px}}
 @media(max-width:390px){.alphabet{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
@@ -46,24 +46,14 @@ footer{text-align:center;margin-top:34px;font:12px 'IM Fell English',serif;lette
 <p class="intro">Uma escrita anterior aos registros humanos, preservada em inscrições e fragmentos. Seus sinais guardam sons, conceitos e ecos dos primeiros elementos.</p>
 <section class="alphabet" id="alphabet" aria-label="Alfabeto VÉRATH"></section>
 <div class="section-rule"><span class="kicker">Os três elementos</span></div>
-<section class="alphabet" aria-label="Símbolos dos três elementos">
-<div class="glyph"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"><path d="M32 5 L48 20 L43 43 L32 59 L21 43 L16 20Z M21 32 L43 32 M32 14 L32 50"/></g></svg><span class="latin">KÁKÉR · KARMA</span></div>
-<div class="glyph"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"><path d="M32 5 C39 18 54 23 54 35 C54 48 42 58 32 59 C22 58 10 48 10 35 C10 23 25 18 32 5Z M18 39 L46 25 M18 25 L46 39"/></g></svg><span class="latin">ZHÁK · ÓDIO</span></div>
-<div class="glyph"><svg viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"><path d="M32 5 L52 32 L32 59 L12 32Z M32 5 L32 59 M12 32 L52 32"/></g></svg><span class="latin">NÛR · FIM</span></div>
+<section class="alphabet element-symbols" aria-label="Símbolos dos três elementos">
+<div class="glyph"><img src="data:image/jpeg;base64,${encoded[0]}" alt="Símbolo de KÁKÉR, Karma"><span class="latin">KÁKÉR · KARMA</span></div>
+<div class="glyph"><img src="data:image/jpeg;base64,${encoded[1]}" alt="Símbolo de ZHÁK, Ódio"><span class="latin">ZHÁK · ÓDIO</span></div>
+<div class="glyph"><img src="data:image/jpeg;base64,${encoded[2]}" alt="Símbolo de NÛR, Fim"><span class="latin">NÛR · FIM</span></div>
 </section>
 <div class="section-rule"><span class="kicker">A única Arca</span></div>
 <section class="arca" aria-label="Símbolo único da Arca">
-<svg viewBox="0 0 100 100" role="img" aria-label="Insígnia mística da Arca">
-<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-<circle cx="50" cy="50" r="37" stroke-dasharray="2 7"/>
-<path d="M50 8 C58 22 72 27 87 29 C74 42 72 57 78 73 C62 69 53 77 50 92 C43 77 31 70 16 73 C23 57 25 43 12 29 C29 27 42 21 50 8Z"/>
-<path d="M50 24 C58 35 65 42 65 51 C65 61 58 68 50 75 C42 68 35 61 35 51 C35 42 42 35 50 24Z"/>
-<path d="M50 32 L50 68 M32 50 L68 50 M38 38 L62 62 M62 38 L38 62"/>
-<circle cx="50" cy="50" r="5" fill="currentColor" stroke="none"/>
-<circle cx="50" cy="4" r="2.5" fill="currentColor" stroke="none"/>
-<circle cx="50" cy="96" r="2.5" fill="currentColor" stroke="none"/>
-</g>
-</svg>
+<img src="data:image/jpeg;base64,${encoded[3]}" alt="Símbolo vermelho da única Arca de VÉRATH">
 <div class="arca-title">A Arca</div>
 <div class="arca-caption">Sinal singular, distinto dos três elementos</div>
 </section>
