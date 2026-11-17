@@ -109,9 +109,10 @@ glyphs.forEach(([letter,shape])=>{
 });
 
 const letters='ABEFGHIKLMNOPRSTUVXYZ';
-const symbolMap=Object.fromEntries(glyphs.map(([letter,shape])=>[letter,'']));
+const cipher='◇⟊⊙⋔⌑𐌅⟟⌁⟒⌖⊣⟊̸⌗⟐⌇⟑⌰⟡⋉⌂⟁';
+const symbolMap=Object.fromEntries([...letters].map((letter,i)=>[letter,[...cipher][i]]));
 const translit={'Á':'A','À':'A','Â':'A','Ã':'A','É':'E','Ê':'E','Í':'I','Ó':'O','Ô':'O','Õ':'O','Ú':'U','Û':'U','Ç':'S'};
-function encode(text){return [...text.toUpperCase()].map(ch=>{const x=translit[ch]||ch;return letters.includes(x)?'⟦'+x+'⟧':ch;}).join(' ');}
+function encode(text){return [...text.toUpperCase()].map(ch=>{const x=translit[ch]||ch;return symbolMap[x]||ch;}).join(' ');}
 function decode(text){return text.replace(/⟦([A-Z])⟧/g,'$1').replace(/\s+/g,' ').trim();}
 document.getElementById('toVerath').onclick=()=>document.getElementById('resultText').value=encode(document.getElementById('sourceText').value);
 document.getElementById('toLatin').onclick=()=>document.getElementById('resultText').value=decode(document.getElementById('sourceText').value);
